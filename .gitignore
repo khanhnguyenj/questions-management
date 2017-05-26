@@ -24,3 +24,5 @@ hs_err_pid*
 /frontend/.classpath
 /frontend/src/main/frontend/node_modules
 /frontend/src/main/frontend/node
+/.idea
+/questions-management-parent.iml
