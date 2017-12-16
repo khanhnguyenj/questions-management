@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~metismenu/dist/metisMenu.min.css';
+@import 'sb-admin-2.css';
+@import '~morris.js/morris.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+.dropdown-menu-right { right: 0; left: auto !important;}
+.sidebar { top: 0px; left: 0px;}
+.navbar { border: 1px solid #e7e7e7;}
+.nav-second-level { padding-left: 3px;}
+.sidebar .nav-third-level li a { padding-left: 10px;}
+.nav-second-level li { list-style: none; padding-bottom: 8px;}
+.sidebar .nav-second-level li a { padding-top: 2px;}
+.sidebar ul li { width: 100%;}
+.card, .list-group { margin-bottom: 20px;}
+
+.page-header { padding-bottom: 9px; margin: 40px 0 20px; border-bottom: 1px solid #eee;}
+.col-xs-9 { width: 60%;}
+.col-xs-3 { width: 40%;}
+
+.card-primary { border-color: #337ab7;}
+.card-primary > .card-header { color: #fff; background-color: #337ab7; border-color: #337ab7;}
+.card-green { border-color: #5cb85c;}
+.card-green > .card-header { border-color: #5cb85c; color: white; background-color: #5cb85c;}
+.card-yellow { border-color: #f0ad4e;}
+.card-yellow > .card-header { border-color: #f0ad4e; color: white; background-color: #f0ad4e;}
+.card-red { border-color: #d9534f;}
+.card-red > .card-header { border-color: #d9534f; color: white; background-color: #d9534f;}
