@@ -48,9 +48,9 @@ public class CategoryController {
     	@Valid @RequestBody Category category) {
         return categoryRepository.findById(categoryId)
             .flatMap(existingCategory -> {
-            	existingCategory.setText(category.getText());
+            	existingCategory.setName(category.getName());
 
-                return tweetRepository.save(existingCategory);
+                return categoryRepository.save(existingCategory);
             })
             .map(updatedCategory -> new ResponseEntity<>(updatedCategory, HttpStatus.OK))
             .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -60,7 +60,7 @@ public class CategoryController {
 	public Mono<ResponseEntity<Void>> deleteCategory(@PathVariable(value = "id") Long categoryId) {
 		return categoryRepository.findById(categoryId)
 			.flatMap(existingCategory ->
-				tweetRepository.delete(existingCategory)
+				categoryRepository.delete(existingCategory)
 					.then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK))))
 			.defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
