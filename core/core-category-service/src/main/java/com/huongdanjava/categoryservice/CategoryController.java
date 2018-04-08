@@ -36,7 +36,7 @@ public class CategoryController {
 	}
 
 	@GetMapping("/category/{id}")
-    public Mono<ResponseEntity<Category>> getCategoryById(@PathVariable(value = "id") Long categoryId) {
+    public Mono<ResponseEntity<Category>> getCategoryById(@PathVariable(value = "id") String categoryId) {
         return categoryRepository.findById(categoryId)
 			.map(category -> ResponseEntity.ok(category))
             .defaultIfEmpty(ResponseEntity.notFound().build());
@@ -44,7 +44,7 @@ public class CategoryController {
 
 	@PutMapping("/category/{id}")
     public Mono<ResponseEntity<Category>> updateCategory(
-    	@PathVariable(value = "id") Long categoryId,
+    	@PathVariable(value = "id") String categoryId,
     	@Valid @RequestBody Category category) {
         return categoryRepository.findById(categoryId)
             .flatMap(existingCategory -> {
@@ -57,7 +57,7 @@ public class CategoryController {
     }
 
 	@DeleteMapping("/category/{id}")
-	public Mono<ResponseEntity<Void>> deleteCategory(@PathVariable(value = "id") Long categoryId) {
+	public Mono<ResponseEntity<Void>> deleteCategory(@PathVariable(value = "id") String categoryId) {
 		return categoryRepository.findById(categoryId)
 			.flatMap(existingCategory ->
 				categoryRepository.delete(existingCategory)

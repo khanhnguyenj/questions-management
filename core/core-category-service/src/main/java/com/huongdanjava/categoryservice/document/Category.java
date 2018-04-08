@@ -12,7 +12,7 @@ import lombok.Data;
 public class Category {
 
 	@Id
-	private Long id;
+	private String id;
 
 	@NotBlank
 	private String name;

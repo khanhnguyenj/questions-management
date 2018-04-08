@@ -4,6 +4,6 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import com.huongdanjava.categoryservice.document.Category;
 
-public interface CategoryRepository extends ReactiveCrudRepository<Category, Long> {
+public interface CategoryRepository extends ReactiveCrudRepository<Category, String> {
 
 }
