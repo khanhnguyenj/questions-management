@@ -4,6 +4,6 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import com.huongdanjava.questionservice.document.Question;
 
-public interface QuestionRepository extends ReactiveCrudRepository<Question, Long> {
+public interface QuestionRepository extends ReactiveCrudRepository<Question, String> {
 
 }

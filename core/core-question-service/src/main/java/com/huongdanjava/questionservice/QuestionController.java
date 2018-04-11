@@ -27,13 +27,13 @@ public class QuestionController {
 		return questionRepository.findAll();
 	}
 
-	@PostMapping("/category")
+	@PostMapping("/question")
 	public Mono<Question> createQuestion(@Valid @RequestBody Question question) {
 		return questionRepository.save(question);
 	}
 
-	@GetMapping("/category/{id}")
-	public Mono<ResponseEntity<Question>> getQuestionById(@PathVariable(value = "id") Long questionId) {
+	@GetMapping("/question/{id}")
+	public Mono<ResponseEntity<Question>> getQuestionById(@PathVariable(value = "id") String questionId) {
 		return questionRepository.findById(questionId)
 			.map(question -> ResponseEntity.ok(question))
 			.defaultIfEmpty(ResponseEntity.notFound().build());
