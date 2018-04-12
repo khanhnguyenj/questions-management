@@ -22,18 +22,25 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven { url "https://repo.spring.io/milestone" }
 }
 
-configurations {
-	providedRuntime
+ext {
+	springCloudVersion = 'Finchley.M9'
 }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-webflux')
-	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:1.4.4.RELEASE')
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
