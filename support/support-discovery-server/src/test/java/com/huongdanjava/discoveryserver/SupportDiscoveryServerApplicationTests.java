@@ -1,4 +1,4 @@
-package com.huongdanjava.supportdiscoveryserver;
+package com.huongdanjava.discoveryserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
