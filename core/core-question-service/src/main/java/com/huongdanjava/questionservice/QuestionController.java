@@ -23,7 +23,7 @@ public class QuestionController {
 	private QuestionRepository questionRepository;
 
 	@GetMapping("/questions")
-	public Flux<Question> getAllQuestions() {
+	public Flux<Question> findAllQuestions() {
 		return questionRepository.findAll();
 	}
 
@@ -33,10 +33,16 @@ public class QuestionController {
 	}
 
 	@GetMapping("/question/{id}")
-	public Mono<ResponseEntity<Question>> getQuestionById(@PathVariable(value = "id") String questionId) {
+	public Mono<ResponseEntity<Question>> findById(@PathVariable(value = "id") String questionId) {
 		return questionRepository.findById(questionId)
 			.map(question -> ResponseEntity.ok(question))
 			.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 
+	@GetMapping("/questions/{categoryId}")
+	public Flux<ResponseEntity<Question>> findByCategoryId(@PathVariable String categoryId) {
+		return questionRepository.findByCategoryId(categoryId)
+			.map(question -> ResponseEntity.ok(question))
+			.defaultIfEmpty(ResponseEntity.notFound().build());
+	}
 }

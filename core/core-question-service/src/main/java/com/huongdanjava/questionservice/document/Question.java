@@ -14,6 +14,6 @@ public class Question {
 	
 	private String description;
 	
-	private Long categoryId;
+	private String categoryId;
 
 }
