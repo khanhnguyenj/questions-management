@@ -5,7 +5,6 @@ import com.huongdanjava.questionservice.service.CategoryService;
 import com.huongdanjava.questionservice.service.CompositeQuestionService;
 import com.huongdanjava.questionservice.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -20,6 +19,6 @@ public class CompositeQuestionServiceImpl implements CompositeQuestionService {
 
     @Override
     public Flux<Question> findQuestionsByCategoryId(String categoryId) {
-        return null;
+        return questionService.findQuestionsByCategoryId(categoryId);
     }
 }

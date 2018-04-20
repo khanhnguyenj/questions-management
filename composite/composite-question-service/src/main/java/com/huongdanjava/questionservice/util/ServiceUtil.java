@@ -20,7 +20,7 @@ public class ServiceUtil {
 	public URI obtainServiceUrl(String serviceId) {
 		ServiceInstance serviceInstance = loadBalancerClient.choose(serviceId);
 
-		return serviceInstance.getUri();
+ 		return serviceInstance.getUri();
 	}
 
 }

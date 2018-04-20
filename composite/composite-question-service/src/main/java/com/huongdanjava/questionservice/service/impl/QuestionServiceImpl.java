@@ -8,18 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import java.net.URI;
-
 @Service
 public class QuestionServiceImpl implements QuestionService {
 
-    private static final String QUESTION_SERVICE_NAME = "Question";
+    private static final String QUESTION_SERVICE_NAME = "Core Question Service";
 
     @Autowired
     private ServiceUtil serviceUtil;
-
-    @Autowired
-    private WebClient webClient;
 
     @Override
     public String getServiceUrl() {
@@ -28,10 +23,17 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Flux<Question> findQuestionsByCategoryId(String categoryId) {
-        String url = getServiceUrl() + "/questions/" + categoryId;
+        WebClient client = WebClient
+            .builder()
+            .baseUrl(getServiceUrl())
+            .build();
 
-        WebClient client = WebClient.create(url);
-        return null;
+        WebClient.ResponseSpec responseSpec = client
+            .get()
+            .uri("/questions/" + categoryId)
+            .retrieve();
+
+        return responseSpec.bodyToFlux(Question.class);
     }
 
 }
