@@ -15,5 +15,8 @@ public class Category {
 	private String id;
 
 	@NotBlank
+	private String code;
+	
+	@NotBlank
 	private String name;
 }
