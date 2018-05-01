@@ -8,12 +8,12 @@ import lombok.Data;
 @Data
 @Document
 public class Question {
-	
+
 	@Id
 	private String id;
-	
+
 	private String description;
-	
+
 	private String categoryId;
 
 }

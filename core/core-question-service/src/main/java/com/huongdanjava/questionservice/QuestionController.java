@@ -40,9 +40,7 @@ public class QuestionController {
 	}
 
 	@GetMapping("/questions/{categoryId}")
-	public Flux<ResponseEntity<Question>> findByCategoryId(@PathVariable String categoryId) {
-		return questionRepository.findByCategoryId(categoryId)
-			.map(question -> ResponseEntity.ok(question))
-			.defaultIfEmpty(ResponseEntity.notFound().build());
+	public Flux<Question> findByCategoryId(@PathVariable String categoryId) {
+		return questionRepository.findByCategoryId(categoryId);
 	}
 }
