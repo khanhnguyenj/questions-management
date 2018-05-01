@@ -1,11 +1,13 @@
 package com.huongdanjava.questionservice.service.impl;
 
-import com.huongdanjava.questionservice.dto.Question;
-import com.huongdanjava.questionservice.service.QuestionService;
-import com.huongdanjava.questionservice.util.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.huongdanjava.questionservice.dto.Question;
+import com.huongdanjava.questionservice.service.QuestionService;
+import com.huongdanjava.questionservice.util.ServiceUtil;
+
 import reactor.core.publisher.Flux;
 
 @Service
@@ -22,8 +24,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Flux<Question> findQuestionsByCategoryId(String categoryId) {
-        WebClient client = WebClient
+	public Flux<Question> getQuestions(String categoryId) {
+		WebClient client = WebClient
             .builder()
             .baseUrl(getServiceUrl())
             .build();
@@ -34,6 +36,6 @@ public class QuestionServiceImpl implements QuestionService {
             .retrieve();
 
         return responseSpec.bodyToFlux(Question.class);
-    }
+	}
 
 }

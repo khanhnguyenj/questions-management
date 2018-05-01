@@ -1,11 +1,17 @@
 package com.huongdanjava.questionservice.dto;
 
 import lombok.Data;
+import reactor.core.publisher.Flux;
 
 @Data
 public class Question {
 
-    private String description;
+	private String id;
 
-    private Integer categoryId;
+	private String description;
+
+    private String categoryId;
+
+    private Flux<Option> options;
+
 }
