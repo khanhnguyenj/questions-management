@@ -1,4 +1,4 @@
-package com.huongdanjava.coreoptionservice;
+package com.huongdanjava.optionservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
