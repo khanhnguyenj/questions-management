@@ -1,9 +1,13 @@
 package com.huongdanjava.questionservice.dto;
 
+import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class Question {
+@AllArgsConstructor
+public class CompositeQuestion {
 
 	private String id;
 
@@ -11,4 +15,5 @@ public class Question {
 
     private String categoryId;
 
+	private List<Option> options;
 }

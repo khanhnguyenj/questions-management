@@ -5,7 +5,8 @@ import lombok.Data;
 @Data
 public class Option {
 
+	private String id;
+
 	private String description;
 
-	private String questionId;
 }

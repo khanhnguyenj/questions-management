@@ -1,6 +1,6 @@
 package com.huongdanjava.questionservice;
 
-import com.huongdanjava.questionservice.dto.Question;
+import com.huongdanjava.questionservice.dto.CompositeQuestion;
 import com.huongdanjava.questionservice.service.CompositeQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ public class CompositeQuestionController {
     private CompositeQuestionService compositeQuestionService;
 
     @GetMapping("/{categoryId}/questions")
-    public Flux<Question> findQuestionsByCategoryId(@PathVariable String categoryId) {
+    public Flux<CompositeQuestion> findQuestionsByCategoryId(@PathVariable String categoryId) {
         return compositeQuestionService.findQuestionsByCategoryId(categoryId);
     }
 

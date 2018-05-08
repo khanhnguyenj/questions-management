@@ -1,9 +1,10 @@
 package com.huongdanjava.questionservice.service;
 
-import com.huongdanjava.questionservice.dto.Question;
+import com.huongdanjava.questionservice.dto.CompositeQuestion;
+
 import reactor.core.publisher.Flux;
 
 public interface CompositeQuestionService {
 
-    Flux<Question> findQuestionsByCategoryId(String categoryId);
+    Flux<CompositeQuestion> findQuestionsByCategoryId(String categoryId);
 }
