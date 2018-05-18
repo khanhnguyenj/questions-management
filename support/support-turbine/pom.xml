@@ -35,6 +35,12 @@
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-netflix-turbine-stream</artifactId>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>com.netflix.rxnetty</groupId>
+		    		<artifactId>rx-netty</artifactId>
+		    	</exclusion>
+		    </exclusions>
 		</dependency>
 		<dependency>
       		<groupId>org.springframework.cloud</groupId>
@@ -45,12 +51,14 @@
 	        <groupId>io.netty</groupId>
 	        <artifactId>netty-handler</artifactId>
 	    </dependency>
-	    <dependency>
-		    <groupId>com.netflix.turbine</groupId>
-		    <artifactId>turbine-core</artifactId>
-		    <version>2.0.0-DP.2</version>
-	    </dependency>
-	    
+
+		<dependency>
+		    <groupId>io.reactivex</groupId>
+		    <artifactId>rxnetty</artifactId>
+		    <version>0.4.20</version>
+		    <scope>runtime</scope>
+		</dependency>
+			    
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
