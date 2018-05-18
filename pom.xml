@@ -26,7 +26,17 @@
 	</properties>
 
 	<modules>
-        <module>frontend</module>
+        <!-- <module>frontend</module> -->
+		<module>composite/composite-question-service</module>
+		
+		<module>core/core-question-service</module>
+		<module>core/core-option-service</module>
+		<module>core/core-category-service</module>
+		
+		<module>support/support-discovery-server</module>
+		<module>support/support-edge-server</module>
+		<module>support/support-monitor-dashboard</module>
+		<module>support/support-turbine</module>
     </modules>
 
 	<dependencyManagement>
