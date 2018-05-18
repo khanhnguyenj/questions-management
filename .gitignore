@@ -68,3 +68,13 @@ support/support-turbine/.project
 support/support-turbine/.classpath
 support/support-turbine/.settings/
 support/support-turbine/target/
+
+api/api-question-service/.project
+api/api-question-service/.classpath
+api/api-question-service/target/
+api/api-question-service/.settings/
+
+support/support-auth-server/.project
+support/support-auth-server/.classpath
+support/support-auth-server/target/
+support/support-auth-server/.settings/
