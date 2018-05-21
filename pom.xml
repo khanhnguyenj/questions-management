@@ -39,7 +39,6 @@
 		<module>support/support-edge-server</module>
 		<module>support/support-monitor-dashboard</module>
 		<module>support/support-turbine</module>
-		<module>support/support-auth-server</module>
     </modules>
 
 	<dependencyManagement>
