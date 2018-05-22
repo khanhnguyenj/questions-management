@@ -5,7 +5,7 @@
 
 	<artifactId>composite-question-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>composite-question-service</name>
 	<description>Composite Question Service for Questions Management</description>
@@ -110,6 +110,29 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+  				<artifactId>docker-maven-plugin</artifactId>
+  				<version>0.26.0</version>
+  				<executions>
+  					<execution>
+  						<id>docker-build</id>
+  						<goals>
+  							<goal>build</goal>
+  						</goals>
+  					</execution>
+  				</executions>
+  				<configuration>
+  					<images>
+  						<image>
+  							<name>composite-question-service-image</name>
+  							<build>
+  								<from>openjdk:8-jre</from>
+  							</build>
+  						</image>
+  					</images>
+  				</configuration>
 			</plugin>
 		</plugins>
 	</build>
