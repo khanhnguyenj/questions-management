@@ -124,11 +124,27 @@
   					</execution>
   				</executions>
   				<configuration>
+  					<verbose>true</verbose>
   					<images>
   						<image>
   							<name>composite-question-service-image</name>
   							<build>
   								<from>openjdk:8-jre</from>
+  								<volumes>
+  									<volume>/maven</volume>
+  								</volumes>
+  								<assembly>
+  									<inline>
+  										<file>
+  											<source>target/${project.artifactId}-${project.version}.jar</source>
+  											<destName>test.jar</destName>
+  											<outputDirectory>.</outputDirectory>
+  										</file>
+  									</inline>
+  								</assembly>
+  								<entryPoint>
+  									<exec>exec java -jar "/maven/test.jar"</exec>
+  								</entryPoint>
   							</build>
   						</image>
   					</images>
