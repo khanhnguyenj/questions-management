@@ -16,7 +16,9 @@ public class Category {
 
 	@NotBlank
 	private String code;
-	
+
 	@NotBlank
 	private String name;
+
+	private String description;
 }
